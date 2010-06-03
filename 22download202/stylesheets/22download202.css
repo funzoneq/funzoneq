@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	font: 12px "Trebuchet MS", "Lucida Sans unicode", Arial, Helvetica, sans-serif, courier;
 	line-height: 1.5;
-	color: #000;
+	color: ##1b2431;
 }
 
 a { color: #f09;}
@@ -24,12 +24,21 @@ h1
 
 .name
 {
+    width: 331px;
     margin-top: 25px;
     font-weight: bold;
     font-size: 18px;
     padding-left: 15px;
     border-left: 4px solid black;
+    text-decoration: underline;
+    cursor: pointer;
 }
+
+.name_hover
+{
+    background: #ffd1df;
+}
+
 .track
 {
     clear: both;

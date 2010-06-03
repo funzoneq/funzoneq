@@ -30,6 +30,11 @@ $(document).ready(function() {
             info.show();
             window.location.hash = this.parentElement.id;
         }
+        e.preventDefault();
+    }).hover(function(e){
+        $(this).addClass("name_hover");
+    },function(e){
+        $(this).removeClass("name_hover");
     });
 });
             //-->
