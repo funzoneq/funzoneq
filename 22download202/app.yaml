@@ -4,8 +4,8 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /22tracks\.json
+  script: main.py
+
 - url: .*
   script: html.py
-
-- url: /22tracks.json
-  script: main.py
