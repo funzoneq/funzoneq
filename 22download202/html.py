@@ -1,4 +1,5 @@
 from leech import get22tracks
+import re
 
 def main():
     genres = get22tracks()
@@ -8,8 +9,10 @@ def main():
     except (IOError, OSError):
         tpl = "{content}"
     content = u""
+    rx_key2id = re.compile( r"[^a-zA-Z0-9]+" )
     for key in sorted(genres.keys()):
-        g = u"<div id='%s' class='genre'>\n<div class='name'>%s</div>\n"%(key, key.title())
+        id = rx_key2id.sub( "-", key )
+        g = u"<div id='%s' class='genre'>\n<div class='name'>%s</div>\n"%(id, key.title())
         g += u"<div class='info'>\n"
         for track in genres[key]:
             g += "<div class='track'>\n"

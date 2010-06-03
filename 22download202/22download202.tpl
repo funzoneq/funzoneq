@@ -11,8 +11,25 @@
 
 $(document).ready(function() {
     $('.genre > .info').hide();
+    var id = window.location.hash.substr(1);
+    if( id )
+    {
+        $('#'+window.location.hash.substr(1)+' > .info').show();
+        window.location.hash = id;
+    }
     $('.genre > .name').click(function(e) {
-        $('~ .info', this).toggle();
+        var info = $('~ .info', this);
+        if( info.is(":visible") )
+        {
+            $('.genre > .info').hide();
+            window.location.hash = "";
+        }
+        else
+        {
+            $('.genre > .info').hide();
+            info.show();
+            window.location.hash = this.parentElement.id;
+        }
     });
 });
             //-->
