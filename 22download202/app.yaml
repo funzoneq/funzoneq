@@ -5,4 +5,7 @@ api_version: 1
 
 handlers:
 - url: .*
+  script: html.py
+
+- url: /22tracks.json
   script: main.py
