@@ -2,10 +2,10 @@
 from google.appengine.api import memcache
 from google.appengine.api import urlfetch
 from urllib import urlencode
+from urllib import quote
 from BeautifulSoup import BeautifulStoneSoup
 
 def get22tracks():
-
     data = memcache.get( "22tracks" )
     if data is not None:
         return data
@@ -34,7 +34,7 @@ def get22tracks():
                     info[k] = e.string.strip()
                 except AttributeError:
                     info[k] = None
-            info['url'] = "http://www.22tracks.com/admin/mp3/"+info['mp3']
+            info['url'] = "http://www.22tracks.com/admin/mp3/"+quote(info['mp3'])
             tracks.append( info )
         genres[title.strip().lower()] = tracks
 
@@ -42,4 +42,3 @@ def get22tracks():
     return genres
 
 # vim: expandtab shiftwidth=4 softtabstop=4 textwidth=79:
-
