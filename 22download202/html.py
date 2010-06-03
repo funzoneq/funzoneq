@@ -14,7 +14,10 @@ def main():
         for track in genres[key]:
             g += "<div class='track'>\n"
             for k in ("title","artist","album"):
-                g += u"<span class='%s'>%s</span>\n" % (k,track[k])
+                data = track[k]
+                if not data or len(data.strip()) < 1:
+                    data = "&nbsp;"
+                g += u"<span class='%s'>%s</span>\n" % (k,data)
             g += u"<a class='url' href='%s'>download</a>\n" % track['url']
             g += "</div>\n\n"
         g += u"</div>\n</div>\n\n\n"
