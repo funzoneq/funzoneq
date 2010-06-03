@@ -7,8 +7,11 @@ handlers:
 - url: /stylesheets
   static_dir: stylesheets
 
+- url: /22tracks\.txt
+  script: text.py
+
 - url: /22tracks\.json
-  script: main.py
+  script: json.py
 
 - url: .*
   script: html.py
