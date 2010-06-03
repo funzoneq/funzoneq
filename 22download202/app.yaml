@@ -13,5 +13,8 @@ handlers:
 - url: /22tracks\.json
   script: json.py
 
+- url: /clearcache
+  script: clearcache.py
+
 - url: .*
   script: html.py
