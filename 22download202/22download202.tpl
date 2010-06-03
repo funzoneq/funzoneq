@@ -28,7 +28,7 @@ $(document).ready(function() {
         {
             $('.genre > .info').hide();
             info.show();
-            window.location.hash = this.parentElement.id;
+            window.location.hash = $(this).parents(".genre").get(0).id;
         }
         e.preventDefault();
     }).hover(function(e){
