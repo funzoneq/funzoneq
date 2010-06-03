@@ -1,0 +1,8 @@
+application: 22download202
+version: 1-0-test
+runtime: python
+api_version: 1
+
+handlers:
+- url: .*
+  script: main.py
