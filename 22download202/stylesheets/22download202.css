@@ -9,4 +9,6 @@ body {
 a { color: #f09;}
 a:hover { color: #000; }
 
-#id { margin: 0 auto; width: 800px; }
+url.a { display: block; }
+
+#id { width: 800px; margin: 0 auto; }
