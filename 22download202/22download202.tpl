@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,32 +8,58 @@
         <script language="JavaScript">
             <!--
 
+function toggle( e )
+{
+    var info = $('~ .info', this);
+    if( info.is(":visible") )
+    {
+        $('.genre > .info').hide();
+        window.location.hash = "";
+        $('#tabs > div').removeClass("active");
+    }
+    else
+    {
+        $('.genre > .info').hide();
+        info.show();
+        var newid = $(this).parents(".genre").get(0).id;
+        window.location.hash = newid;
+        $('#tabs > div').removeClass("active");
+        $('#tab_'+newid).addClass("active");
+    }
+    e.preventDefault();
+}
+
 $(document).ready(function() {
     $('.genre > .info').hide();
-    var id = window.location.hash.substr(1);
-    if( id )
+    var currentid = window.location.hash.substr(1);
+    if( currentid )
     {
-        $('#'+window.location.hash.substr(1)+' > .info').show();
-        window.location.hash = id;
+        $('#'+currentid+' > .info').show();
+        window.location.hash = currentid;
     }
-    $('.genre > .name').click(function(e) {
-        var info = $('~ .info', this);
-        if( info.is(":visible") )
-        {
-            $('.genre > .info').hide();
-            window.location.hash = "";
-        }
-        else
-        {
-            $('.genre > .info').hide();
-            info.show();
-            window.location.hash = $(this).parents(".genre").get(0).id;
-        }
-        e.preventDefault();
-    }).hover(function(e){
+    $('.genre > .name').click(toggle)
+    .hover(function(e){
         $(this).addClass("name_hover");
     },function(e){
         $(this).removeClass("name_hover");
+    });
+
+    $('.genre').each(function(e) {
+        var container = $('#tabs');
+        var id = this.id;
+        var title = $('.name', this).html();
+        var a = $("<div id='tab_"+id+"' class='tab'></div>\n", document);
+        a.html( title );
+        if( id == currentid )
+        {
+            a.addClass( "active" );
+        }
+        $('#tabs').append( a );
+        a.targetid = id;
+        a.click(function(e){
+            var target = this.id.substr(4);
+            $('#'+target+' > .name').click();
+        });
     });
 });
             //-->
@@ -43,6 +68,8 @@ $(document).ready(function() {
     <body>
 
 <h1>22downloads</h1>
+
+<div id="tabs"></div>
 
 {content}
 

@@ -25,7 +25,12 @@ def main():
             g += "</div>\n\n"
         g += u"</div>\n</div>\n\n\n"
         content += g
-    print tpl.replace( "{content}", content.encode( "utf-8" ) )
+
+    output = tpl.replace( "{content}", content.encode( "utf-8" ) )
+    print "Content-Type: text/html"
+    print "Content-Length:", len(output)
+    print
+    print output
 
 if __name__ == "__main__":
     main()
