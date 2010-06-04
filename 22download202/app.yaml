@@ -15,6 +15,10 @@ handlers:
 
 - url: /clearcache
   script: clearcache.py
+  
+- url: /favicon.ico
+  static_files: stylesheets/favicon.ico
+  upload: stylesheets/favicon.ico
 
 - url: .*
   script: html.py
