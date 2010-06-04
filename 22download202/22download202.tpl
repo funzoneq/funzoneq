@@ -5,6 +5,7 @@
         <title>22download202</title>
         <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/22download202.css" />
         <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script src="http://widgets.twimg.com/j/2/widget.js"></script>
         <script language="JavaScript">
             <!--
 
@@ -90,6 +91,40 @@ $(document).ready(function() {
 <div id="tabs"></div>
 
 {content}
+
+<div id="twitterding">
+<script>
+	new TWTR.Widget({
+		version: 2,
+		type: 'search',
+		search: '#22tracks',
+		interval: 1000,
+		title: '<strong>tweet-a-round</strong>',
+		subject: '',
+		width: "80%",
+		height: 500,
+		theme: {
+			shell: {
+				background: '#FFFFFF',
+				color: '#000000'
+			},
+			tweets: {
+				background: '#FFFFFF',
+				color: '#444444',
+				links: '#727271'
+			}
+		},
+		features: {
+			scrollbar: false,
+			loop: true,
+			live: true,
+			hashtags: true,
+			timestamp: true,
+			avatars: true,
+			behavior: 'default'
+		}
+	}).render().start();
+</script></div>
 
 <div id="footer">API for the nerds: <a href="http://22download202.appspot.com/22tracks.json">json</a> or <a href="http://22download202.appspot.com/22tracks.txt">text</a></div>
 <div id="hint">Hint: wget -i http://22download202.appspot.com/22tracks.txt --referer=http://22tracks.com/22tracks.swf<br />
