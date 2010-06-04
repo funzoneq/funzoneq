@@ -34,7 +34,7 @@ def get22tracks():
                     info[k] = e.string.strip()
                 except AttributeError:
                     info[k] = None
-            info['url'] = "http://www.22tracks.com/admin/mp3/"+quote(info['mp3'])
+            info['url'] = "http://www.22tracks.com/admin/treks/"+quote(info['mp3'])
             tracks.append( info )
         genres[title.strip().lower()] = tracks
 
