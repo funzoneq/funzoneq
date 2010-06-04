@@ -20,7 +20,7 @@ def get22tracks():
     if not soup:
         return {'status': "soup error"}
 
-    keys = ("title","artist","album","mp3")
+    keys = ("title","artist","album","mp3", "itunes")
 
     genres = {}
     for genre in soup.findAll( "genre" ):
