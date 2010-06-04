@@ -92,7 +92,8 @@ $(document).ready(function() {
 {content}
 
 <div id="footer">API for the nerds: <a href="http://22download202.appspot.com/22tracks.json">json</a> or <a href="http://22download202.appspot.com/22tracks.txt">text</a></div>
-<div id="hint">Hint: wget -i http://22download202.appspot.com/22tracks.txt --referer=http://22tracks.com/22tracks.swf</div>
+<div id="hint">Hint: wget -i http://22download202.appspot.com/22tracks.txt --referer=http://22tracks.com/22tracks.swf<br />
+<a href="http://puf.sourceforge.net/">puf</a> -i <(curl -s http://22download202.appspot.com/22tracks.txt)</div>
 <div id="copieerrecht">All files hosted by <a href="http://22tracks.com/">22tracks.com</a> | Greetings ( Kaji && funzoneq ) ^ thanod</div>
 
     </body>
