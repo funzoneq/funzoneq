@@ -10,8 +10,8 @@ def get22tracks():
     if data is not None:
         return data
 
-    values = { 'code': "dontueverstealmy22tracksbecausethatwouldbe22wacks" }
-    res = urlfetch.fetch("http://22tracks.com/get_alltracks.php", urlencode(values), method=urlfetch.POST, headers={'Content-Type': 'application/x-www-form-urlencoded'});
+    values = { 'code': "pleasedontueverstealmy22tracksbecausethatwouldbe22wacks" }
+    res = urlfetch.fetch("http://22tracks.com/get_thetracks.php", urlencode(values), method=urlfetch.POST, headers={'Content-Type': 'application/x-www-form-urlencoded'});
 
     if res.status_code != 200:
         return {'status': "http error"}
