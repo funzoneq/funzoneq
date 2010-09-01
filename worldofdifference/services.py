@@ -51,9 +51,29 @@ def hex0rcrypt(data, key):
 	crypt = rc4.rc4crypt(data, key)
 	return "z"+binascii.hexlify(crypt)
 
+# Hier je proxies inlezen van een bestand, zorg er voor dat het allemaal http
+# proxies zijn. Je kan ze uit Nils zijn code halen van pollbuster.
+#
+# code:
+#  proxies = open("proxies.txt").readlines()
 
-for i in range(0, 20000):
+# Loop door de proxies:
+#
+# code:
+#  for proxy in proxies:
+for i in range(0, 2000):
 	data = generateUserInfo()
 	hex = hex0rcrypt(data, key)
+    # Set hier eerst de proxy, er vanuit gaande dat elke regel van het bestand
+    # dit bevat: "http://host:port/"
+    #
+    # code:
+    #  proxy_handler = urllib2.ProxyHandler({'http': proxy})
+    #  opener = urllib2.build_opener(proxy_handler)
+    #  urllib2.install_opener(opener)
+    #
 	doVote(hex)
 	time.sleep(0.5)
+
+# vim: expandtab shiftwidth=4 softtabstop=4 textwidth=79:
+
