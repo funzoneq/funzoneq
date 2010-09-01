@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import logging, binascii, rc4, random, hashlib, names
+import logging, binascii, rc4, random, hashlib, names, time
 from pyamf.remoting.client import RemotingService
 
 key = 'wodrocks'
@@ -56,4 +56,4 @@ for i in range(0, 20000):
 	data = generateUserInfo()
 	hex = hex0rcrypt(data, key)
 	doVote(hex)
-	sleep(0.5)
+	time.sleep(0.5)
