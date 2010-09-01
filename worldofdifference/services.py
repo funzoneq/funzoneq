@@ -38,7 +38,8 @@ def genHyvesURL():
 	return url
 
 def generateUserInfo():
-	data = 'efbbf92b7dab2f3e;'
+	UIDs = [ 'b3cdf321c6c019d3', 'efbbf92b7dab2f3e', 'f4953a7d462d4bd8', 'c9bed70e4525ef9a', 'a7a35424b016e22a', '272bf47d9ceeb3d4' ]
+	data =  UIDs[random.randint(0, len(UIDs))-1]+';'
 	data += randUserID()+';'
 	data += names.MName(3, "voor").New()+";"
 	data += names.MName(3, "achter").New()+";"
