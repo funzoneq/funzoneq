@@ -1,0 +1,6 @@
+easy_install PyAMF
+easy_install simplejson
+
+git clone http://github.com/simplegeo/python-oauth2
+cd python-oauth2
+easy_install `pwd`
