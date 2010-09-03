@@ -1,0 +1,52 @@
+bash $ /opt/local/bin/nmap -A flashservices.egotribe.nl
+
+Starting Nmap 5.21 ( http://nmap.org ) at 2010-09-03 13:23 CEST
+Nmap scan report for flashservices.egotribe.nl (93.94.226.28)
+Host is up (0.038s latency).
+rDNS record for 93.94.226.28: php5.server43.firstfind.nl
+Not shown: 973 filtered ports
+PORT     STATE  SERVICE            VERSION
+20/tcp   closed ftp-data
+21/tcp   open   ftp                ProFTPD 1.3.0
+22/tcp   open   ssh                OpenSSH 4.3p2 Debian 9etch3 (protocol 2.0)
+| ssh-hostkey: 1024 81:67:c5:af:02:c6:b6:10:35:64:41:b7:71:f9:56:73 (DSA)
+|_2048 81:e7:0d:03:f4:71:11:b7:8c:3a:9e:48:58:59:df:ca (RSA)
+26/tcp   open   smtp               Sendmail (Not accepting mail)
+|_smtp-commands: EHLO server43.firstfind.nl Hello sd511665d.adsl.wanadoo.nl [213.17.102.93], pleased to meet you, ENHANCEDSTATUSCODES
+80/tcp   open   http               Apache httpd 2
+|_html-title: Access forbidden!
+81/tcp   closed hosts2-ns
+110/tcp  open   pop3               Cyrus pop3d 2.1.18-IPv6-Debian-2.1.18-5.1
+|_pop3-capabilities: USER EXPIRE(NEVER) UIDL APOP LOGIN-DELAY(0) OK(K List of capabilities follows) RESP-CODES IMPLEMENTATION(Cyrus POP3 server v2 1 18-IPv6-Debian-2 1 18-5 1) PIPELINING AUTH-RESP-CODE TOP SASL(NTLM CRAM-MD5 DIGEST-MD5)
+113/tcp  closed auth
+143/tcp  open   imap               Cyrus imapd 2.1.18-IPv6-Debian-2.1.18-5.1
+443/tcp  open   ssl/http           Apache httpd 2
+|_sslv2: server still supports SSLv2
+|_html-title: Site doesn't have a title (text/html; charset=UTF-8).
+3306/tcp open   mysql              MySQL 5.0.84-0.dotdeb.0-log
+| mysql-info: Protocol: 10
+| Version: 5.0.84-0.dotdeb.0-log
+| Thread ID: 13714993
+| Some Capabilities: Connect with DB, Compress, Transactions, Secure Connection
+| Status: Autocommit
+|_Salt: KZb\+[k*,?8;^J6nJd8-
+6666/tcp closed irc
+6667/tcp closed irc
+6668/tcp closed irc
+6669/tcp closed irc
+6689/tcp closed unknown
+6692/tcp closed unknown
+6699/tcp closed napster
+6779/tcp closed unknown
+6788/tcp closed unknown
+6789/tcp closed ibm-db2-admin
+6792/tcp closed unknown
+6839/tcp closed unknown
+6881/tcp closed bittorrent-tracker
+6901/tcp closed unknown
+6969/tcp closed acmsoda
+7000/tcp closed afs3-fileserver
+Service Info: OSs: Unix, Linux
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 110.20 seconds
